@@ -12,7 +12,7 @@ export const VideoCanvas: FC = memo(() => {
 
   const { timestamp, duration } = useVideoSync(video, canvas);
   const { togglePlay } = usePlayerControls(video);
-  const { setCurrentEvent, events } = useEvents();
+  const { setCurrentEvent } = useEvents();
 
   const changeTimecode = useCallback(
     (currentPercent: number) => {
@@ -29,7 +29,6 @@ export const VideoCanvas: FC = memo(() => {
       <ProgressBar
         stamp={timestamp}
         duration={duration}
-        eventsList={events}
         changeTimecode={changeTimecode}
       />
       <Controls currentStamp={timestamp} duration={duration} />

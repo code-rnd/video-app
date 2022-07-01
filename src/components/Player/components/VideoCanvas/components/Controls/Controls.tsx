@@ -35,3 +35,5 @@ export const Controls: FC<ControlsModel> = memo(
     );
   }
 );
+
+Controls.displayName = "Controls";

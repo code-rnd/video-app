@@ -7,7 +7,8 @@ export const Video = forwardRef<HTMLVideoElement>((props, ref) => {
       preload="auto"
       src={URLS.stream}
       ref={ref}
-      // autoPlay
+      playsInline
+      autoPlay
       hidden
     />
   );

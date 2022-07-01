@@ -13,8 +13,3 @@ export const checkCurrentEvent = (
     return currentTime >= timeStart && currentTime <= timeEnd;
   });
 };
-
-//  const fps = 24;
-// const width = 1_280;
-// const height = 720;
-// const second = 1_000;

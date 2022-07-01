@@ -4,6 +4,7 @@ import * as apiTypes from "../../http/apiTypes";
 import { EventsContext } from "./Events.context";
 import { Api } from "../../http";
 import { sorted } from "./Events.utils";
+import { eventMocked } from "./Events.mocked";
 
 export const EventsContextProvider: FC<{ children: ReactNode }> = ({
   children,
@@ -19,7 +20,7 @@ export const EventsContextProvider: FC<{ children: ReactNode }> = ({
     setIsLoading(true);
     try {
       const { data } = await Api.getEvents();
-      setEvents(sorted(data));
+      setEvents([...sorted(data), eventMocked]);
     } catch (e) {
       console.log("При попытке получить список событий произошла ошибка: ", e);
     } finally {
