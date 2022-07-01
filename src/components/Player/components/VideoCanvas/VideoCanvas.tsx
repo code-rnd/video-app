@@ -5,17 +5,18 @@ import { usePlayerControls } from "./hooks/use-player-controls";
 import s from "./VideoCanvas.module.scss";
 import { useEvents } from "../../../../shared/contexts";
 
+const second = 1_000;
 export const VideoCanvas: FC = memo(() => {
   const video = useRef<HTMLVideoElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
 
   const { timestamp, duration } = useVideoSync(video, canvas);
   const { togglePlay } = usePlayerControls(video);
-  const { setCurrentEvent, events } = useEvents();
+  const { setCurrentEvent } = useEvents();
 
   const changeTimecode = useCallback(
     (currentPercent: number) => {
-      const timestamp = ((duration * currentPercent) / 100) * 1_000;
+      const timestamp = ((duration * currentPercent) / 100) * second;
       setCurrentEvent({ timestamp } as any);
     },
     [duration, setCurrentEvent]
@@ -28,7 +29,6 @@ export const VideoCanvas: FC = memo(() => {
       <ProgressBar
         stamp={timestamp}
         duration={duration}
-        eventsList={events}
         changeTimecode={changeTimecode}
       />
       <Controls currentStamp={timestamp} duration={duration} />

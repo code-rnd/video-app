@@ -2,6 +2,7 @@ import { RefObject, useEffect, useRef, useState } from "react";
 import { fps, height, width } from "../VideoCanvas.constants";
 import { useCheckCurrentEvent, useCustomDraw } from "../utils";
 
+const second = 1_000;
 export const useVideoSync = (
   video: RefObject<HTMLVideoElement>,
   canvas: RefObject<HTMLCanvasElement>
@@ -38,7 +39,7 @@ export const useVideoSync = (
         return;
       }
       drawImage();
-    }, 1000 / fps);
+    }, second / fps);
     video.current.onpause = function () {
       timer?.current && clearInterval(timer.current);
     };
@@ -51,7 +52,7 @@ export const useVideoSync = (
       timer?.current && clearInterval(timer.current);
       timer.current = setInterval(() => {
         drawImage();
-      }, 1000 / fps);
+      }, second / fps);
 
       return () => timer.current && clearTimeout(timer.current);
     };

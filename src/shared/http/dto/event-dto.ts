@@ -5,7 +5,7 @@ export interface EventDto {
   zone: ZoneDto;
 }
 
-interface ZoneDto {
+export interface ZoneDto {
   left: number;
   top: number;
   width: number;

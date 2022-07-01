@@ -1,17 +1,12 @@
 import { useEvents } from "../../../../../shared/contexts";
 import { useEffect } from "react";
+import { checkCurrentEvent } from "./check-current-time";
 
 export const useCheckCurrentEvent = (timestamp: number) => {
   const { setCurrentEvent, events, currentEvent } = useEvents();
 
   useEffect(() => {
-    const event = events.find((event) => {
-      const currentTime = timestamp;
-      const timeStart = event.timestamp / 1_000;
-      const timeEnd = (event.timestamp + event.duration) / 1_000;
-
-      return currentTime >= timeStart && currentTime <= timeEnd;
-    });
+    const event = checkCurrentEvent(events, timestamp);
 
     if (event) {
       setCurrentEvent(event);
