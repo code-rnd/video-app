@@ -1,0 +1,10 @@
+$gap-size: 24px;
+
+.container {
+  display: flex;
+  height: min-content;
+
+  padding: $gap-size;
+
+  box-sizing: border-box;
+}

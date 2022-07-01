@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 300px;
+
+  box-sizing: border-box;
+  padding: 12px;
+
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    transition: all .2s;
+    background-color: #303030;
+  }
+}
+
+.isActive {
+  background-color: #303030;
+}
+
+.title {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.subTitle {
+  border-radius: 3px;
+  padding: 2px 6px;
+  background-color: #263850;
+  color: #3ea6ff;
+}
+

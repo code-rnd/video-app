@@ -1,0 +1,31 @@
+.container {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 28px;
+
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.4584427521008403) 0%, rgba(255,255,255,0) 100%);
+  color: white;
+}
+
+.timeView {
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+.chapterView {
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+

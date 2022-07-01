@@ -1,0 +1,29 @@
+$gap-size: 50px;
+
+.container {
+  box-sizing: border-box;
+  margin-left: 24px;
+
+  border: 1px solid #303030;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-color: #202020;
+
+  height: $gap-size;
+  padding: 4px 16px;
+  color: white;
+
+  box-sizing: border-box;
+}
+
+.list {
+  height: 522px - $gap-size;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
