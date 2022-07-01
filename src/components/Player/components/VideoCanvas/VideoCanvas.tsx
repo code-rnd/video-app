@@ -5,6 +5,7 @@ import { usePlayerControls } from "./hooks/use-player-controls";
 import s from "./VideoCanvas.module.scss";
 import { useEvents } from "../../../../shared/contexts";
 
+const second = 1_000;
 export const VideoCanvas: FC = memo(() => {
   const video = useRef<HTMLVideoElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -15,7 +16,7 @@ export const VideoCanvas: FC = memo(() => {
 
   const changeTimecode = useCallback(
     (currentPercent: number) => {
-      const timestamp = ((duration * currentPercent) / 100) * 1_000;
+      const timestamp = ((duration * currentPercent) / 100) * second;
       setCurrentEvent({ timestamp } as any);
     },
     [duration, setCurrentEvent]

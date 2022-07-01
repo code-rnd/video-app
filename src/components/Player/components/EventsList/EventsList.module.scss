@@ -3,6 +3,7 @@ $gap-size: 50px;
 .container {
   box-sizing: border-box;
   margin-left: 24px;
+  width: 100%;
 
   border: 1px solid #303030;
 }
@@ -22,7 +23,7 @@ $gap-size: 50px;
 }
 
 .list {
-  height: 522px - $gap-size;
+  height: calc(100% - 50px);
   box-sizing: border-box;
   overflow-y: scroll;
 }
